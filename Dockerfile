@@ -14,6 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-COPY ./wait_for_db.py .
-
 CMD ["sh", "-c", "python wait_for_db.py && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
